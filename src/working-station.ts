@@ -12,7 +12,7 @@ main();
 
 function main() {
     // # Initialising the canvas and the renderer
-    const canvas = document.querySelector('#canvas') ?? undefined;
+    const canvas = document.querySelector('#canvas-working-station') ?? undefined;
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, canvas });
 
     // # Setting up the camera

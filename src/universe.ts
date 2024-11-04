@@ -11,7 +11,7 @@ main();
 
 function main() {
     // # Initialising the canvas and the renderer
-    const canvas = document.querySelector('#canvas') ?? undefined;
+    const canvas = document.querySelector('#canvas-universe') ?? undefined;
     renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
     // # Setting up the camera

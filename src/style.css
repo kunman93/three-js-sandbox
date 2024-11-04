@@ -2,7 +2,30 @@ html, body {
    margin: 0;
    height: 100%;
 }
-#canvas {
+
+main {
+   display: flex;
+   flex-direction: column;
+}
+
+#canvas-working-station {
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+
+#contact-section {
+   width: 100%;
+   height: 100%;
+}
+
+#canvas-universe {
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+
+#canvas-earth {
    width: 100%;
    height: 100%;
    display: block;
