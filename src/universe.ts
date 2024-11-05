@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 let renderer: any, camera: any, scene: any, controls: any;
-let stars: any[];
 
 /**
  *  ---- Universe animation in Three.js ---- 
@@ -34,7 +33,6 @@ function main() {
     const geometry = new THREE.SphereGeometry(0.25, 32, 32);
     const material = new THREE.MeshPhongMaterial({ color: 0xffff00, flatShading: true });
 
-    stars = [];
     for (let i = 0; i < 1000; i++) {
         const star = new THREE.Mesh(geometry, material);
         star.position.x = (Math.random() - 0.5) * 1000;
@@ -43,7 +41,6 @@ function main() {
         star.updateMatrix();
         star.matrixAutoUpdate = false;
         scene.add(star);
-        stars.push(star);
     }
 
     // # Lights
