@@ -12,7 +12,7 @@ main();
 function main() {
     // # Initialising the canvas and the renderer
     const canvas = document.querySelector('#canvas-universe') ?? undefined;
-    renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, canvas });
 
     // # Setting up the camera
     // ## Setting for the camera
@@ -28,15 +28,14 @@ function main() {
 
     // # Setting up the scene
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x00061a);
     scene.fog = new THREE.FogExp2(0x00061a, 0.0002);
 
     // # Creating stars
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const geometry = new THREE.SphereGeometry(0.25, 32, 32);
     const material = new THREE.MeshPhongMaterial({ color: 0xffff00, flatShading: true });
 
     stars = [];
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 1000; i++) {
         const star = new THREE.Mesh(geometry, material);
         star.position.x = (Math.random() - 0.5) * 1000;
         star.position.y = (Math.random() - 0.5) * 1000;
