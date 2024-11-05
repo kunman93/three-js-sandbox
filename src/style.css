@@ -3,12 +3,14 @@ html, body {
    height: 100%;
 }
 
-h1 {
-   margin: 0;
-   padding: 1rem;
+#canvas-working-station {
+   display: block;
+
+   width: 100%;
+   height: 100%;
 }
 
-#canvas-working-station {
+#canvas-orbs {
    display: block;
 
    width: 100%;
