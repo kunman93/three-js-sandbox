@@ -31,9 +31,11 @@ function main() {
     scene = new THREE.Scene();
 
     // # Load gltf models
+    const baseUrl = "assets/gltf";
+    
     let modelName = `1970s_retro_computer.glb`;
     const gltfLoader = new GLTFLoader();
-    let url = `assets/${modelName}`;
+    let url = `${baseUrl}/${modelName}`;
     gltfLoader.load(url, async function (gltf) {
         retroComputerModel = gltf.scene;
         retroComputerModel.position.x = -4.5;
@@ -46,7 +48,7 @@ function main() {
     });
 
     modelName = `commodore_64__computer_full_pack.glb`;
-    url = `assets/${modelName}`;
+    url = `${baseUrl}/${modelName}`;
     gltfLoader.load(url, async function (gltf) {
         commodore64ComputerModel = gltf.scene;
         commodore64ComputerModel.position.x = 4;
@@ -59,7 +61,7 @@ function main() {
     });
     
     modelName = `game_boy_classic.glb`;
-    url = `assets/${modelName}`;
+    url = `${baseUrl}/${modelName}`;
     gltfLoader.load(url, async function (gltf) {
         gameboyClassicModel = gltf.scene;
         gameboyClassicModel.scale.set(8,8,8);
@@ -75,7 +77,7 @@ function main() {
     });
 
     modelName = `childhood_books.glb`;
-    url = `assets/${modelName}`;
+    url = `${baseUrl}/${modelName}`;
     gltfLoader.load(url, async function (gltf) {
         childhoodBooksModel = gltf.scene;
         childhoodBooksModel.scale.set(9,9,9);

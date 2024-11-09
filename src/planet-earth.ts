@@ -32,7 +32,7 @@ function main() {
   // # Load gltf model
   const modelName = `planet_earth.glb`;
   const gltfLoader = new GLTFLoader();
-  const url = `assets/${modelName}`;
+  const url = `assets/gltf/${modelName}`;
   gltfLoader.load(url, async function (gltf) {
     planetEarthModel = gltf.scene;
 
