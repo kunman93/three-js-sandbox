@@ -30,18 +30,22 @@ function main() {
     scene.fog = new THREE.FogExp2(0x00061a, 0.0002);
 
     // # Creating stars
-    const geometry = new THREE.SphereGeometry(0.25, 32, 32);
-    const material = new THREE.MeshPhongMaterial({ color: 0xffff00, flatShading: true });
-
-    for (let i = 0; i < 1000; i++) {
-        const star = new THREE.Mesh(geometry, material);
-        star.position.x = (Math.random() - 0.5) * 1000;
-        star.position.y = (Math.random() - 0.5) * 1000;
-        star.position.z = (Math.random() - 0.5) * 1000;
-        star.updateMatrix();
-        star.matrixAutoUpdate = false;
-        scene.add(star);
+    const numberOfStars = 1000;
+    const vertices = [];
+    for (let i = 0; i < numberOfStars; i++) {
+        const x = (Math.random() - 0.5) * 1000;
+        const y = (Math.random() - 0.5) * 1000;
+        const z = (Math.random() - 0.5) * 1000;
+        vertices.push(x, y, z);
     }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+    const material = new THREE.PointsMaterial({ size: 0.5, color: 'fffff00' });
+
+    const stars = new THREE.Points(geometry, material);
+    scene.add(stars);
 
     // # Lights
     const dirLight1 = new THREE.DirectionalLight(0xffffff, 3);
