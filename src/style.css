@@ -1,60 +1,44 @@
-html, body {
-   margin: 0;
-   height: 100%;
+* {
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
 }
 
-#canvas-working-station {
-   display: block;
-
-   width: 100%;
-   height: 100%;
+body {
+   background-color: #fff;
+   color: #444;
 }
 
-#canvas-orb {
-   display: block;
-
-   width: 100%;
-   height: 100%;
-}
-
-#canvas-orbs {
-   display: block;
-
-   width: 100%;
-   height: 100%;
-}
-
-#contact-section {
-   position: relative;
-
-   width: 100%;
-   height: 100%;
-}
-
-#canvas-universe {
+#content {
    position: absolute;
-
-   display: block;
-
+   top: 0;
    width: 100%;
-   height: 100%;
-   
-   background-color: #00061a;
+   z-index: 1;
+   padding: 3em 0 0 0;
 }
 
-.contact-form-canvas-earth-container {
+#canvas-multiple-orbs {
    position: absolute;
-
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
+   left: 0;
    width: 100%;
    height: 100%;
 }
 
-#canvas-earth {
-   display: block;
-   width: 50%;
-   height: 50%;
+.list-item {
+   display: inline-block;
+   margin: 1em;
+   padding: 1em;
+   box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.list-item>div:nth-child(1) {
+   width: 200px;
+   height: 200px;
+}
+
+.list-item>div:nth-child(2) {
+   color: #888;
+   font-family: sans-serif;
+   font-size: large;
+   width: 200px;
+   margin-top: 0.5em;
 }
